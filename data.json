@@ -1,0 +1,28 @@
+{
+  "items": {
+    "ch1": {
+      "titre": "Chaise de gotaga",
+      "description": "Chaise sur laquelle le french monster s'est assis",
+      "prix": 30000,
+      "lien_img": "images\/chaise_gotaga.jpg"
+    },
+    "ch2": {
+      "titre": "Chaise \u00e0 l'ancienne",
+      "description": "Chaise qui etait utilis\u00e9 il y a longtemps",
+      "prix": 3141592,
+      "lien_img": "images\/chaise_ancienne.jpeg"
+    },
+    "ch3": {
+      "titre": "Chaise futuriste",
+      "description": "Chaise la plus futuriste connu \u00e0 ce jour (la chaise du futur!!!)",
+      "prix": 400,
+      "lien_img": "images\/chaise_futuriste.jpeg"
+    },
+    "ch4": {
+      "titre": "Chaise rigoureuse",
+      "description": "Chaise qui est globalement rigoureuse",
+      "prix": 32,
+      "lien_img": "images\/chaise_rigoureuse.jpeg"
+    }
+  }
+}
