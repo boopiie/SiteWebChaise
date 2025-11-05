@@ -55,6 +55,7 @@ if(isset($_SESSION['login']) && isset($_SESSION['pwd'])){
         <?php 
         if($_SESSION['login'] == "root" && $_SESSION['pwd'] == "root"){
             echo "<a href='ajouter_produit.php'>Ajouter un produit</a>";
+            echo "<a href='_produit.php'>Ajouter un produit</a>";
         } ?>
         </div>
     </nav>
