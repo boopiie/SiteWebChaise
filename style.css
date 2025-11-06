@@ -174,7 +174,6 @@ form button:hover {
     background-color: #27ae60;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .groupecarte {
         grid-template-columns: 1fr;

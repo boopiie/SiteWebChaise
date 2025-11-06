@@ -34,15 +34,20 @@ if(isset($_SESSION['login']) && isset($_SESSION['pwd'])){
         $_SESSION['listePanier'] = [];
     }
 
-    if(isset($_POST['ajouter'])){
+    if(isset($_POST['ajouter'])) {
         $nouvelElt = $_POST['element'];
-        if(isset($_SESSION['listePanier'][$nouvelElt])){
+        if (isset($_SESSION['listePanier'][$nouvelElt])) {
             $_SESSION['listePanier'][$nouvelElt] += 1;
-        }
-        else{
+        } else {
             $_SESSION['listePanier'][$nouvelElt] = 1;
         }
     }
+    if(isset($_POST['supprimer'])){
+        $elt = $_POST['element'];
+        unset($data['items'][$elt]);
+        file_put_contents("data.json", json_encode($data));
+    }
+
 
     ?>
     <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +60,6 @@ if(isset($_SESSION['login']) && isset($_SESSION['pwd'])){
         <?php 
         if($_SESSION['login'] == "root" && $_SESSION['pwd'] == "root"){
             echo "<a href='ajouter_produit.php'>Ajouter un produit</a>";
-            echo "<a href='_produit.php'>Ajouter un produit</a>";
         } ?>
         </div>
     </nav>
@@ -86,11 +90,15 @@ if(isset($_SESSION['login']) && isset($_SESSION['pwd'])){
 
             ?>
 
-        <!-- Gerer les ajouts de produit dans le panier -->
-        <form method="post">
-            <?php echo "<input name='element' type='hidden' value= ". $item. ">"; ?>
-            <button type='submit' name='ajouter'>Ajouter au panier</button>
-        </form>
+            <!-- Gerer les ajouts de produit dans le panier -->
+            <form method="post">
+                <?php echo "<input name='element' type='hidden' value= ". $item. ">"; ?>
+                <button type='submit' name='ajouter'>Ajouter au panier</button>
+                <?php if($_SESSION['login'] == "root" && $_SESSION['pwd'] == "root") : ?>
+                <?php echo "<input name='element' type='hidden' value= $item >"; ?>
+                <button id="btn-supprimer" type='submit' name='supprimer'>Supprimer l'article</button>
+                <?php endif;?>
+            </form>
     <?php
 
         echo "</div>";

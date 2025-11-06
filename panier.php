@@ -65,7 +65,7 @@ if(isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
             echo "<br>";
             echo "<form method='post'>";
             echo "<input type='hidden' name='produit' value='$panier'>";
-            echo "<button type='submit' class='supprimer-panier' name='supprimer'>delete</button>";
+            echo "<button type='submit' class='supprimer-panier' name='supprimer'>supprimer</button>";
             echo "</form>";
             echo "<br>-";
             echo "</div>";

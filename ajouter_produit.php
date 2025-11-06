@@ -9,6 +9,7 @@
     <?php 
     if($_SESSION['login'] == "root" && $_SESSION['pwd'] == "root"){
         echo "<a href='ajouter_produit.php'>Ajouter un produit</a>";
+        echo "<a href='supprimer_produit.php'>Supprimer un produit</a>";
     } ?>
     </div>
 </nav>
